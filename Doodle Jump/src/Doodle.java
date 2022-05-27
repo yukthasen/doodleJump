@@ -1,4 +1,4 @@
-
+//CLASS NOT USED DISREGARD
 public class Doodle extends Character {
 	public Doodle(int x, int y) {
 		super(x, y);

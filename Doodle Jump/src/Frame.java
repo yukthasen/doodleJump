@@ -20,10 +20,11 @@ import javax.swing.Timer;
 
 public class Frame extends JPanel implements ActionListener, MouseListener, KeyListener {
 
+	//objects and background being set
 	Background 	bg 	= new Background();
-	Character doodle = new Character(150,600);
-	Random rd = new Random(1234);	 
+	Character doodle = new Character(150,600);	 
 
+	Font f1 = new Font(Font.SERIF, Font.PLAIN, 30);
 	int score = 0;
 	long time = System.currentTimeMillis();//accessing time
 	
@@ -34,10 +35,16 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	int[] xnumDis = {0, 200, 50, 270, 320, 50};
 	int[] ynumDis = {450, 370, 290, 210, 130, 50}; 
 	
+	// ArrayList<Integer> heightsReached = new ArrayList<Integer>();
+	//was going to add a score feature where if the doodle went down a platform
+	//score would go down by 10 
+	//didn't have time :((
+	
 	//starting platform position
 	int pos1 = 200;
 	int pos2 = 530;
 	int i=0; // index of arrayList
+	
 
 	
 	public void paint(Graphics g) {
@@ -45,9 +52,14 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		//painting the objects
 		bg.paint(g);
 		doodle.paint(g);
+		
+		
+		g.setFont(f1);
+		g.drawString("Doodle Jump!", 160, 40);
+		g.drawString("Score: "+score, 370,70);	
 
 		//painting our platforms every specific amount of seconds
-		if(time%50==0 && i<6){	
+		if(time%20==0 && i<6){	
 			MovingPlatform platform = new MovingPlatform(pos1,pos2); 
 			randomPlats.add(platform);
 			System.out.println("here");
@@ -57,10 +69,15 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 			
 		}
 		
+		if(score>=70) {
+			g.drawString("You win!!", 10, 70);
+		}
+		
 		if(randomPlats.size()>0)System.out.println(randomPlats.get(0).x);
 	//	painting each platform within arrayList of random platforms
 		for(MovingPlatform p : randomPlats) {
 			p.paint(g);
+		
 		
 			//checking whether bottom of doodle collides with top of platform to make it jump
 			if(doodle.vy > 0 && doodle.x >= p.x && doodle.x + 50 <= p.x + 100 && doodle.y + 76 >= p.y) {
@@ -70,6 +87,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 				break;
 			}		
 		}
+		
 		
 		//will only paint message of who wins when score is 10
 //		
