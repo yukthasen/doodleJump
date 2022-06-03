@@ -9,7 +9,6 @@ Doodle-Cat
 - 📫 How to reach me **yukthasen@gmail.com**
 
 - ⚡ Fun fact **I'm the most famous youtuber and Yuktha is the most girlboss**
-![IMG_3717](https://user-images.githubusercontent.com/20590586/148612582-72f5e53e-704f-4c46-8e86-ea617f08c3aa.GIF)
 
 # Project Title
 Doodle-Cat
