@@ -16,6 +16,8 @@ Doodle-Cat
  Doodle-Cat is based on the mobile game Doodle-Jump but with a black cat instead of an alien. The goal is to get to the top of the screen using platforms without falling.
 # how to play
 Use the spacebar to jump and get to the top
+![Uploading Doodle GIF.gif…]()
+
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
